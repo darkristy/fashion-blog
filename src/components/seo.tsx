@@ -1,13 +1,13 @@
-import React from "react"
-import Meta from "./SEO/meta"
-import Twitter from "./SEO/twitter"
-import Facebook from "./SEO/facebook"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import Meta from './SEO/meta'
+import Twitter from './SEO/twitter'
+import Facebook from './SEO/facebook'
+import { useStaticQuery, graphql } from 'gatsby'
 
 interface SEOProps {
   title: string
-  description: string
-  keywords: any
+  description?: string
+  keywords?: any
 }
 
 const SEO: React.FC<SEOProps> = ({ title, description, keywords }) => {
@@ -22,6 +22,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords }) => {
                 twitterCard
                 twitterTitle
                 twitterDescription
+
                 twitterSite
                 twitterImage
               }
@@ -36,7 +37,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords }) => {
           }
         }
       }
-    `
+    `,
   )
   const metaDescription = description || data.site.siteMetadata.description
 
